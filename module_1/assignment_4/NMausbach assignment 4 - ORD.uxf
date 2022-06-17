@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>200</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>USER</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>90</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ROLES</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>310</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>BIRTHDATE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>310</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>DEPENDENTS</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>220</y>
+      <w>100</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.*
+m2=1.*
+Has</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>110</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.*
+m2=1.*
+Has</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>220</y>
+      <w>130</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1.*
+m2=1.1
+Has</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;90.0</additional_attributes>
+  </element>
+</diagram>
