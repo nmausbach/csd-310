@@ -12,7 +12,7 @@ def findStudent():
     for doc in docs:
         print("Student ID: " + doc["student_id"] + "\nFirst Name: " + doc["first_name"] + "\nLast Name: " + doc["last_name"] + "\n")
 
-#find method
+#find One method
 def findOneStudent(x):
     doc = db.students.find_one(x)
     print("--DISPLAYING UPDATED STUDENT DOCUMENT--")
