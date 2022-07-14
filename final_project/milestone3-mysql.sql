@@ -12,7 +12,7 @@ CREATE TABLE business (
     _address      VARCHAR(75)     NOT NULL
 ); 
 
--- create the player table and set the foreign key
+-- create the player employee
 CREATE TABLE employee (
     _employee_id   INT             NOT NULL        ,
     _first_name  VARCHAR(75)     NOT NULL,
@@ -21,11 +21,13 @@ CREATE TABLE employee (
     _salary     INT             NOT NULL
 );
 
+-- create the roles table
 CREATE TABLE roles (
     _functions  VARCHAR(75)     NOT NULL,
     _title   VARCHAR(75)     NOT NULL
 );
 
+-- create the clients table
 CREATE TABLE clients (
     _client_id   INT             NOT NULL        ,
     _name  VARCHAR(75)     NOT NULL,
@@ -33,12 +35,14 @@ CREATE TABLE clients (
     _dateJoined DATE
 );
 
+-- create the assets table
 CREATE TABLE assets (
     _asset_id   INT             NOT NULL,
     _name  VARCHAR(75)     NOT NULL,
-    _value     DOUBLE             NOT NULL
+    _value     FLOAT             NOT NULL
 );
 
+-- create the transactions table
 CREATE TABLE transactions (
 	_transaction_id     INT             NOT NULL,
      _name  VARCHAR(75)     NOT NULL,
@@ -46,6 +50,13 @@ CREATE TABLE transactions (
     _code   INT     NOT NULL   ,
     _date DATE
 );
+SELECT  t._date, c._name, SUM(t._code) AS codes
+FROM clients c 
+LEFT JOIN transactions t 
+ON t._transaction_id = c._client_id 
+WHERE c._client_id = 1
+GROUP BY c._name
+HAVING  codes >= 10;
 
 -- insert business records
 INSERT INTO business(_revenue, _business_name,_address)
@@ -103,7 +114,6 @@ INSERT INTO roles(_title,_functions)
 	VALUES(5, 'Becca','Cars for less', '2021-09-15');
  INSERT INTO clients(_client_id, _name,_company, _dateJoined)
 	VALUES(6, 'Julie','Julies Accounting', '2021-08-21');
-    
 -- insert assets
  INSERT INTO assets(_asset_id ,_name,_value)
 	VALUES(1,'Raw Goods',1000.00);
@@ -122,27 +132,32 @@ INSERT INTO assets(_asset_id,_name,_value)
  INSERT INTO transactions(_transaction_id, _name, _value, _code, _date)
 	VALUES(1, 'Accounts Recivable', 2000, 001, '2022-05-20');
 INSERT INTO transactions(_transaction_id, _name, _value, _code, _date)
-	VALUES(2, 'Accounts Recivable', 2000, 001, '2022-05-20');
+	VALUES(1, 'Accounts Recivable', 2000, 001, '2022-05-20');
 INSERT INTO transactions(_transaction_id, _name, _value, _code, _date)
-	VALUES(3, 'Accounts Recivable', 2000, 001, '2022-05-20');
+	VALUES(1, 'Accounts Recivable', 2000, 001, '2022-05-20');
 INSERT INTO transactions(_transaction_id, _name, _value, _code, _date)
-	VALUES(4, 'Accounts Recivable', 2000, 001, '2022-05-20');
+	VALUES(1, 'Accounts Recivable', 2000, 001, '2022-05-20');
 INSERT INTO transactions(_transaction_id, _name, _value, _code, _date)
-	VALUES(5, 'Accounts Recivable', 2000, 001, '2022-05-20');
+	VALUES(1, 'Accounts Recivable', 2000, 001, '2022-05-20');
 INSERT INTO transactions(_transaction_id, _name, _value, _code, _date)
-	VALUES(6, 'Accounts Recivable', 2000, 001, '2022-05-20');
+	VALUES(1, 'Accounts Recivable', 2000, 001, '2022-05-20');
 INSERT INTO transactions(_transaction_id, _name, _value, _code, _date)
-	VALUES(7, 'Accounts Recivable', 2000, 001, '2022-05-20');
+	VALUES(1, 'Accounts Recivable', 2000, 001, '2022-05-20');
 INSERT INTO transactions(_transaction_id, _name, _value, _code, _date)
-	VALUES(8, 'Accounts Recivable', 2000, 001, '2022-05-20');
+	VALUES(1, 'Accounts Recivable', 2000, 001, '2022-05-20');
+INSERT INTO transactions(_transaction_id, _name, _value, _code, _date)
+	VALUES(1, 'Accounts Recivable', 2000, 001, '2022-05-20');
+INSERT INTO transactions(_transaction_id, _name, _value, _code, _date)
+	VALUES(1, 'Accounts Recivable', 2000, 001, '2022-05-20');
+INSERT INTO transactions(_transaction_id, _name, _value, _code, _date)
+	VALUES(1, 'Accounts Recivable', 2000, 001, '2022-05-20');
 INSERT INTO transactions(_transaction_id,_name,_value, _code, _date)
-	VALUES(9, 'Accounts Payable', 250, 002, '2022-05-20');
+	VALUES(2, 'Accounts Payable', 250, 002, '2022-05-20');
 INSERT INTO transactions(_transaction_id,_name,_value, _code, _date)
-	VALUES(10,'Accounts Payable',3000,003, '2022-05-20');
+	VALUES(3,'Accounts Payable',3000,003, '2022-05-20');
 INSERT INTO transactions(_transaction_id,_name,_value, _code, _date)
-	VALUES(11,'Accounts Recivable',150,004, '2022-04-20');
+	VALUES(4,'Accounts Recivable',150,004, '2022-04-20');
 INSERT INTO transactions(_transaction_id,_name,_value, _code, _date)
-	VALUES(12,'Accounts Recivable',10000,005, '2022-06-20');
+	VALUES(5,'Accounts Recivable',10000,005, '2022-06-20');
 INSERT INTO transactions(_transaction_id,_name,_value, _code, _date)
-	VALUES(13,'Accounts Payable',2500,006, '2022-06-20'); 
-SELECT _client_id, _name,_company, _dateJoined FROM clients WHERE _dateJoined > (DATE_SUB(curdate(), INTERVAL 6 MONTH)) ORDER BY _dateJoined desc
+	VALUES(6,'Accounts Payable',2500,006, '2022-06-20'); 
